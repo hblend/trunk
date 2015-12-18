@@ -1,0 +1,169 @@
+<h1>Trunk</h1>
+
+	<p>Trunk is a set of graphic components whith some <strong>conventions</strong>. You can build administration user interfaces extremely fast.</p>
+
+	<h2>Introduction</h2>
+
+		<p>Trunk components are independent from third party libraries for several reasons:</p>
+
+		<ul>
+			<li>Support for old browsers is no needed.</li>
+			<li>Should be easy to understand, easy to use and easy to extend.</li>
+			<li>Are really simple.</li>
+			<li>The components rely on the lastests HTML5 standard implementations.</li>
+		</ul>
+
+	<h2>Components</h2>
+
+		<h3>TrunkButton</h3>
+
+		[[include TrunkButton]]
+
+		<example>
+<button component="TrunkButton">default</button>
+<button component="TrunkButton" class="blue">blue</button>
+<button component="TrunkButton" class="green">green</button>
+<button component="TrunkButton" class="aqua">aqua</button>
+<button component="TrunkButton" class="orange">orange</button>
+<button component="TrunkButton" class="red">red</button>
+<button component="TrunkButton" class="purple">purple</button>
+<button component="TrunkButton" class="gray">gray</button>
+<button component="TrunkButton" class="none">none</button>
+		</example>
+
+		<p>Or dinamically:</p>
+
+		<div id="buttons-example"></div>
+
+		<example>
+<div id="buttons-example"></div>
+<script type="text/javascript">
+	var button = trunk.create('Button');
+	button.dom.classList.add('blue');
+	button.dom.textContent = 'Dynamic button';
+	button.dom.onclick = function(e) {
+		alert('hello!');
+	};
+	document.getElementById('buttons-example').appendChild(button.dom);
+</script>
+		</example>
+
+		<h3>TrunkBipanel</h3>
+
+		[[include TrunkBipanel]]
+
+		<div id="bipanel-example" class="jail"></div>
+
+		<example>
+<div id="bipanel-example"></div>
+<script type="text/javascript">
+
+	var bipanel = trunk.create('Bipanel');
+	document.getElementById('bipanel-example').appendChild(bipanel.dom);
+
+	var sample_left = document.createElement('div');
+	sample_left.innerHTML = '<ul>' + 
+	'<li>This</li>' + '<li>is</li>' + '<li>the</li>' + '<li>left</li>' + 
+	'<li>sample</li>' + '<li>panel</li>' + '<li>for</li>' + '<li>example</li>' + 
+	'<li>a</li>' + '<li>list</li>' + '<li>with</li>' + '<li>different</li>' + 
+	'<li>values</li>' + '<li>and</li>' + '<li>autoscroll</li>' + '<li>if</li>' + 
+	'<li>the</li>' + '<li>cursor</li>' + '<li>is</li>' + '<li>over</li>' + 
+	'</ul>';
+
+	bipanel.addLeft(sample_left);
+
+	var sample_right = document.createElement('div');
+	sample_right.innerHTML = '<h1>Right panel</h1>' +
+	'<p>The right panel has autoscroll</p>' +
+	'<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>';
+
+	bipanel.addRight(sample_right);
+
+</script>
+		</example>
+
+
+		<h3>TrunkInputButton</h3>
+
+		[[include TrunkInputButton]]
+
+		<div id="inputbutton-example"></div>
+
+		<example>
+<div id="inputbutton-example"></div>
+
+<script type="text/javascript">
+	
+	var standard = trunk.create('InputButton');
+	standard.button.addEventListener('click', function(e){
+		alert('Standard button says: ' + standard.input.value);
+	}, true);
+	document.getElementById('inputbutton-example').appendChild(standard.dom);
+
+	var search = trunk.create('InputButton');
+	search.dom.classList.add('search');
+	search.button.addEventListener('click', function(e){
+		alert('Search button says: ' + search.input.value);
+	}, true);
+	document.getElementById('inputbutton-example').appendChild(search.dom);
+
+	var create = trunk.create('InputButton');
+	create.dom.classList.add('new');
+	create.button.addEventListener('click', function(e){
+		alert('New button says: ' + create.input.value);
+	}, true);
+	document.getElementById('inputbutton-example').appendChild(create.dom);
+
+</script>
+
+<style type="text/css">
+#inputbutton-example [component=TrunkInputButton] {
+  margin-bottom: 20px;
+}
+</style>
+		</example>
+
+
+		<h3>TrunkTab</h3>
+
+		[[include TrunkTab]]
+
+		<div id="tab-example"></div>
+
+		<example>
+<div id="tab-example"></div>
+<div id="tabpanel-example"></div>
+
+<script type="text/javascript">
+	
+	var tab = trunk.create('Tab');
+	document.getElementById('tab-example').appendChild(tab.dom);
+
+	var tab_a = tab.add('Tab A');
+	var tab_b = tab.add('Tab B');
+	var tab_c = tab.add('Tab C');
+
+	var tabpanel = document.getElementById('tabpanel-example');
+
+	tab_a.dom.addEventListener('click', function(e) {
+		tabpanel.textContent = 'I am the first one!';
+	}, true);
+
+	tab_b.dom.addEventListener('click', function(e) {
+		tabpanel.textContent = 'I am the second one!';
+	}, true);
+
+	tab_c.dom.addEventListener('click', function(e) {
+		tabpanel.textContent = 'I am the third one!';
+	}, true);
+
+	tab_a.dom.click();
+
+</script>
+<style type="text/css">
+#tabpanel-example {
+  padding: 64px;
+  text-align: center;
+}
+</style>
+		</example>

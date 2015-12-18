@@ -1,0 +1,80 @@
+[component="TrunkBipanel"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+[component="TrunkBipanel"] .left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  overflow: hidden;
+
+  transition: width 0.3s ease-out;
+}
+
+[component="TrunkBipanel"] .left:hover {
+  overflow-y: auto;
+}
+
+[component="TrunkBipanel"] .right {
+  position: absolute;
+  top: 0;
+  left: 310px;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  background-color: white;
+
+  transition: left 0.3s ease-out;
+}
+
+[component="TrunkBipanel"] .splitter {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 300px;
+  width: 10px;
+  cursor: pointer;
+  transition: left 0.3s ease-out;
+}
+
+[component="TrunkBipanel"].collapsed .splitter,
+[component="TrunkBipanel"] .splitter:hover {
+  background-color: dodgerblue;
+}
+
+[component="TrunkBipanel"].collapsed .left {
+  width: 0;
+}
+
+[component="TrunkBipanel"].collapsed .splitter {
+  left: 0;
+}
+
+[component="TrunkBipanel"].collapsed .right {
+  left: 10px;
+}
+
+/* Mobile devices */
+@media (max-width: 800px) {
+  [component="TrunkBipanel"] .splitter {
+    display: none;
+  }
+
+  [component="TrunkBipanel"] .left {
+    width: auto;
+    right: 0;
+  }
+
+  [component="TrunkBipanel"] .right {
+    left: 0;
+    z-index: 9;
+  }
+
+}

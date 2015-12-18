@@ -1,0 +1,43 @@
+
+body {
+  margin: auto;
+  padding: 0 16px;
+  max-width: 800px;
+  font-family: sans-serif;
+}
+
+example {
+  display: block;
+}
+
+.jail {
+  padding: 0;
+  position: relative;
+  background-color: white;
+  min-height: 300px;
+  margin: 32px 0;
+  padding: 32px;
+  box-shadow: 0 0 32px silver;
+  border: solid silver 1px;
+}
+
+code {
+  margin: 32px 0;
+  display: block;
+  white-space: pre;
+  border: solid #E0E0E0 1px;
+  background-color: #FCFCFC;
+}
+
+.gutter {
+  display: block;
+  float: left;
+  min-width: 2rem;
+  border-right: solid #EEEEEE 1px;
+  text-align: right;
+  color: #B2B2B2;
+  background: white;
+  margin-right: 0.5rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
