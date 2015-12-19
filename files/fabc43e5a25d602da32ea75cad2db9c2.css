@@ -1,0 +1,419 @@
+/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  color: #333;
+  background: #f8f8f8;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #998;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #333;
+  font-weight: bold;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #008080;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #d14;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #900;
+  font-weight: bold;
+}
+
+.hljs-subst {
+  font-weight: normal;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #458;
+  font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #000080;
+  font-weight: normal;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #009926;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #990073;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #0086b3;
+}
+
+.hljs-meta {
+  color: #999;
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+
+
+body {
+  margin: auto;
+  padding: 0 16px;
+  max-width: 800px;
+  font-family: sans-serif;
+}
+
+example {
+  display: block;
+}
+
+.jail {
+  padding: 0;
+  position: relative;
+  background-color: white;
+  min-height: 300px;
+  margin: 32px 0;
+  padding: 32px;
+  box-shadow: 0 0 32px silver;
+  border: solid silver 1px;
+}
+
+code {
+  margin: 32px 0;
+  display: block;
+  white-space: pre;
+  border: solid #E0E0E0 1px;
+  background-color: #FCFCFC;
+}
+
+.gutter {
+  display: block;
+  float: left;
+  min-width: 2rem;
+  border-right: solid #EEEEEE 1px;
+  text-align: right;
+  color: #B2B2B2;
+  background: white;
+  margin-right: 0.5rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+[component="TrunkButton"] {
+  display: inline-block;
+  text-decoration: none;
+  padding: 8px 12px;
+  margin: 0px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: solid 1px;
+  text-transform: capitalize;
+  font-size: 14px;
+  text-align: center;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  /* custom styles */
+  color: #333;
+  background-color: white;
+  border-color: #adadad;
+}
+
+[component="TrunkButton"]:hover {
+  background-color: #ebebeb;
+  border-color: #adadad;
+}
+
+[component="TrunkButton"].blue {
+  color: #fff;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+
+[component="TrunkButton"].blue:hover {
+  color: #fff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+
+[component="TrunkButton"].green {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+[component="TrunkButton"].green:hover {
+  color: #fff;
+  background-color: #47a447;
+  border-color: #398439;
+}
+
+[component="TrunkButton"].aqua {
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+
+[component="TrunkButton"].aqua:hover {
+  color: #fff;
+  background-color: #39b3d7;
+  border-color: #269abc;
+}
+
+[component="TrunkButton"].orange {
+  color: #fff;
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+
+[component="TrunkButton"].orange:hover {
+  color: #fff;
+  background-color: #ed9c28;
+  border-color: #d58512;
+}
+
+[component="TrunkButton"].red {
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+
+[component="TrunkButton"].red:hover {
+  color: #fff;
+  background-color: #d2322d;
+  border-color: #ac2925;
+}
+
+[component="TrunkButton"].purple {
+  color: #fff;
+  background-color: #ca8bca;
+  border-color: #bd7ebd;
+}
+
+[component="TrunkButton"].purple:hover {
+  color: #fff;
+  background-color: #b176b1;
+  border-color: #8e5e8e;
+}
+
+[component="TrunkButton"].gray {
+  color: #fff;
+  background-color: #888888;
+  border-color: #777777;
+}
+
+[component="TrunkButton"].gray:hover {
+  color: #fff;
+  background-color: #555555;
+  border-color: #555555;
+}
+
+[component="TrunkButton"].none {
+  color: #428bca;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+[component="TrunkButton"].none:hover {
+  color: #2a6496;
+  border-color: #2a6496;
+}
+
+[component="TrunkButton"]:focus,
+[component="TrunkButton"]:focus {
+  outline: none;
+  box-shadow: 0 0 4px dodgerblue;
+}
+
+[component="TrunkButton"][disabled] {
+  opacity: 0.65;
+  cursor: none;
+}
+[component="TrunkBipanel"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+[component="TrunkBipanel"] .left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  overflow: hidden;
+
+  transition: width 0.3s ease-out;
+}
+
+[component="TrunkBipanel"] .left:hover {
+  overflow-y: auto;
+}
+
+[component="TrunkBipanel"] .right {
+  position: absolute;
+  top: 0;
+  left: 310px;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  background-color: white;
+
+  transition: left 0.3s ease-out;
+}
+
+[component="TrunkBipanel"] .splitter {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 300px;
+  width: 10px;
+  cursor: pointer;
+  transition: left 0.3s ease-out;
+}
+
+[component="TrunkBipanel"].collapsed .splitter,
+[component="TrunkBipanel"] .splitter:hover {
+  background-color: dodgerblue;
+}
+
+[component="TrunkBipanel"].collapsed .left {
+  width: 0;
+}
+
+[component="TrunkBipanel"].collapsed .splitter {
+  left: 0;
+}
+
+[component="TrunkBipanel"].collapsed .right {
+  left: 10px;
+}
+
+/* Mobile devices */
+@media (max-width: 800px) {
+  [component="TrunkBipanel"] .splitter {
+    display: none;
+  }
+
+  [component="TrunkBipanel"] .left {
+    width: auto;
+    right: 0;
+  }
+
+  [component="TrunkBipanel"] .right {
+    left: 0;
+    z-index: 9;
+  }
+
+}[component=TrunkInputButton] {
+  text-align: center;
+  padding: 0;
+  margin: auto;
+  max-width: 400px;
+}
+
+[component=TrunkInputButton] .input-border {
+  padding: 0;
+  margin: 0;
+  border: solid silver 1px;
+  border-right: none;
+  margin-right: 50px;
+  background-color: white;
+}
+
+[component=TrunkInputButton] input {
+  padding: 8px 0;
+  margin: 0;
+  height: 19px;
+  border: none;
+  display: block;
+  width: 100%;
+}
+
+[component=TrunkInputButton] button {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  display: block;
+  float: right;
+  width: 50px;
+  height: 37px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url('data:;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAHNJREFUOMvtlEEKgDAMBLf9xoL4E+vL7U9EYR/QF+hJ6SEHsQE9dG8JYchmaYGuVgWrKWkguT8BSDrqOhoDI4Dt7YbRgK0tlqMn7L6hpAlAdsikBEeYHcr/LFehJADLVZMMTZZJZgCz6w29oNZzSv1X+k4nXy4pS4KwuvEAAAAASUVORK5CYII=');
+}
+
+[component=TrunkInputButton].search button {
+  background-image: url('data:;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAWBJREFUSMetlc11g0AMhD94uTt3HUw6oAR34HQA7oASXILTAXTgEijB7oAcdCcd5CLyNmL5e2ZuwK5GGklDwgRUtQROQOY+tUAtIh0rkEQCfwI34LhwtwEqEelXE6hqDRSsxw9wEpHHIsFE8G/gDgxZ5sB5C8lbIEvhLlUiUkckzEzCgegA1EYer0BVu0DzxbInKr7EEkptWsKGVkvBAUSkNAkHXGPnUhvFP81jWcwgDHo0+UYE4cs72+DPRwlC9FuiL+1AjGB3eIJ8y2VVzdcQtMHzOdaoGVROsjZG4KfmtiH7wnnTuAJzxcZVUa8I3s6M7GiT34HO1j70oStwH6bFAlcThtjY8k2a3ZDV4YWhGZGkQYMettXPFwgKL2/qpuAhIjlwcT7j7bkBPiYa+48kWWhm5tffj+LMT6oRkTLZY1tnSL52sQprbEyuLNnTd1wlT+CU7G1uqnqzvpUi0v8CaSmPya/yj2AAAAAASUVORK5CYII=');
+}
+
+[component=TrunkInputButton].new button {
+  background-image: url('data:;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAFdJREFUOMtjZCAAnj59+oGBgYEfyv0oLS0tgE89EwNhwI+DTbaBJIFRAwehgYxPnz79T0XzPlLbhfw0CcOP1PQyIxF5GSWMpaWlGUfT4aiBRKQtHGysAABkgRG24U1vqQAAAABJRU5ErkJggg==');
+}
+
+[component="TrunkTab"] {
+  border-bottom: solid silver 1px;
+}
+
+[component="TrunkTab"] [component="TrunkButton"] {
+  margin-right: 2px;
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-color: white;
+}
+
+[component="TrunkTab"] [component="TrunkButton"]:hover {
+  background-color: white;
+  border-bottom-color: white;
+}
+
+[component="TrunkTab"] [component="TrunkButton"].none,
+[component="TrunkTab"] [component="TrunkButton"].none:hover {
+  border-bottom-color: transparent;
+}
